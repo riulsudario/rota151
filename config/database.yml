@@ -1,10 +1,10 @@
 default: &default
   adapter: postgresql
-  encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root
-  password:
-  socket: /var/run/mysqld/mysqld.sock
+  timeout: 5000
+  username: <%= ENV.fetch('DATABASE_USERNAME') %>
+  password: <%= ENV.fetch('DATABASE_PASSWORD') %>
+  url: <%= ENV.fetch('DATABASE_URL') %>
 
 development:
   <<: *default
@@ -16,9 +16,6 @@ production:
   primary: &primary_production
     <<: *default
     database: <%= ENV["DATABASE_NAME"] %>
-    username: <%= ENV["DATABASE_USERNAME"] %>
-    password: <%= ENV["DATABASE_PASSWORD"] %>
-    url: <%= ENV["DATABASE_URL"] %>
   cache:
     <<: *primary_production
     database: rota151_production_cache
