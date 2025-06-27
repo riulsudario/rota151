@@ -4,8 +4,8 @@ source "https://rubygems.org"
 gem "rails", github: "rails/rails", branch: "8-0-stable"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
-# Use mysql as the database for Active Record
-gem "mysql2", "~> 0.5"
+# A PostgreSQL client library for Ruby [https://github.com/ged/ruby-pg]
+gem "pg"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
