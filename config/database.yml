@@ -51,9 +51,11 @@ test:
 production:
   primary: &primary_production
     <<: *default
-    database: rota151_production
-    username: rota151
-    password: <%= ENV["ROTA151_DATABASE_PASSWORD"] %>
+    database: <%= ENV["DATABASE_NAME"] %>
+    username: <%= ENV["DATABASE_USERNAME"] %>
+    password: <%= ENV["DATABASE_PASSWORD"] %>
+    host: <%= ENV["DATABASE_HOST"] %>
+    port: <%= ENV["DATABASE_PORT"] %>
   cache:
     <<: *primary_production
     database: rota151_production_cache
