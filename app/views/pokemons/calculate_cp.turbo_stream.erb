@@ -1,0 +1,21 @@
+<turbo-stream action="update" target="calculated-cp">
+  <template>
+    <div class="calculated-cp-value">
+      CP Total: <%= @calculated_cp %>
+    </div>
+    <div class="calculator-result-grid">
+      <div class="calculator-result-item">
+        <div>Ataque</div>
+        <div class="value"><%= @attack %></div>
+      </div>
+      <div class="calculator-result-item">
+        <div>Defesa</div>
+        <div class="value"><%= @defense %></div>
+      </div>
+      <div class="calculator-result-item">
+        <div>Estamina</div>
+        <div class="value"><%= @stamina %></div>
+      </div>
+    </div>
+  </template>
+</turbo-stream>

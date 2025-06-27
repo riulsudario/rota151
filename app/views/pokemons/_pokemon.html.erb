@@ -1,0 +1,46 @@
+<main class="pokemon-main">
+  <div class="pokemon-main-header">
+    <h2>Calculadora de Pontos de Combate (CP)</h2>
+    <form class="pokemon-main-search" action="<%= pokemons_path %>" method="get">
+      <input type="text" name="pokemon_name" placeholder="Pesquisar Pokémon..." class="pokemon-main-search-input" value="<%= params[:pokemon_name] || '' %>">
+      <button type="submit" class="pokemon-main-search-btn">Pesquisar</button>
+    </form>
+  </div>
+  <div class="pokemon-main-content">
+    <section class="pokemon-stats-card pokemon-stats-card--image">
+      <img src="<%= pokemon.sprites['other']['official-artwork']['front_default'] %>" alt="<%= pokemon.name %>" class="pokemon-main-img">
+      <div class="pokemon-stats-card-footer">
+        <div>Pokémon <span><%= pokemon.name.capitalize %></span></div>
+        <div>#<%= pokemon.id %></div>
+      </div>
+    </section>
+    <section class="pokemon-stats-card" data-controller="calculator">
+      <%= form_with url: calculate_cp_pokemons_path, method: :post, data: { calculator_target: "form" } do |form| %>
+        <%= form.hidden_field :pokemon_id, value: pokemon.id %>
+
+        <div class="calculator-field">
+          <label for="level">Nível: <span data-calculator-target="levelValue">20</span></label>
+          <%= form.range_field :level, in: 1..42, step: 0.5, value: 20, class: 'calculator-slider', data: { action: 'input->calculator#updateLevelValue', calculator_target: 'levelSlider' } %>
+        </div>
+
+        <div class="calculator-field">
+          <label for="iv_attack">Ataque: <span data-calculator-target="attackValue">15</span></label>
+          <%= form.range_field :iv_attack, in: 0..15, step: 1, value: 15, class: 'calculator-slider', data: { action: 'input->calculator#updateAttackValue', calculator_target: 'attackSlider' } %>
+        </div>
+
+        <div class="calculator-field">
+          <label for="iv_defense">Defesa: <span data-calculator-target="defenseValue">15</span></label>
+          <%= form.range_field :iv_defense, in: 0..15, step: 1, value: 15, class: 'calculator-slider', data: { action: 'input->calculator#updateDefenseValue', calculator_target: 'defenseSlider' } %>
+        </div>
+
+        <div class="calculator-field">
+          <label for="iv_stamina">Estamina: <span data-calculator-target="staminaValue">15</span></label>
+          <%= form.range_field :iv_stamina, in: 0..15, step: 1, value: 15, class: 'calculator-slider', data: { action: 'input->calculator#updateStaminaValue', calculator_target: 'staminaSlider' } %>
+        </div>
+      <% end %>
+
+      <div class="calculator-result" id="calculated-cp">
+      </div>
+    </section>
+  </div>
+</main>

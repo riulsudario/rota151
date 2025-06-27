@@ -19,10 +19,35 @@
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "pokemon", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
+    <aside class="pokemon-sidebar">
+      <div class="pokemon-sidebar-header">
+      </div>
+      <nav class="pokemon-nav">
+        <ul class="pokemon-list">
+          <li class="pokemon-list-group active">
+            <button class="pokemon-list-group-btn">Calculadora de CP</button>
+          </li>
+          <li class="pokemon-list-group">
+            <button class="pokemon-list-group-btn">Raids</button>
+          </li>
+          <li class="pokemon-list-group">
+            <button class="pokemon-list-group-btn">PvP</button>
+          </li>
+          <li class="pokemon-list-group">
+            <button class="pokemon-list-group-btn">Guias</button>
+          </li>
+          <li class="pokemon-list-group">
+            <button class="pokemon-list-group-btn">Eventos</button>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
     <%= yield %>
   </body>
 </html>

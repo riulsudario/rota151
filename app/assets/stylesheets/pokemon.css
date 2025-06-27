@@ -1,0 +1,306 @@
+/* General Body Styles */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.pokemon-sidebar {
+  width: 260px;
+  background-color: #252526;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+.pokemon-sidebar-header {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #444;
+  text-align: center;
+}
+
+.pokemon-nav h3 {
+  color: #ccc;
+  font-size: 1.2em;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.pokemon-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pokemon-list-group .pokemon-list-group-btn {
+  background: none;
+  border: none;
+  color: #f0f0f0;
+  width: 100%;
+  text-align: left;
+  padding: 15px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.pokemon-list-group.active .pokemon-list-group-btn,
+.pokemon-list-group .pokemon-list-group-btn:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.pokemon-details {
+  width: calc(100% - 260px);
+}
+
+/* Main Content Styles */
+.pokemon-main {
+  flex-grow: 1;
+  padding: 20px 40px;
+  background-color: #1e1e1e;
+}
+
+
+.pokemon-main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.pokemon-main-header h2 {
+  color: #fff;
+  font-size: 1.8em;
+}
+
+.pokemon-main-search {
+  display: flex;
+}
+
+.pokemon-main-search-input {
+  padding: 10px 15px;
+  border: 1px solid #444;
+  background-color: #2a2a2a;
+  color: #f0f0f0;
+  border-radius: 5px 0 0 5px;
+  font-size: 1em;
+  outline: none;
+}
+
+.pokemon-main-search-btn {
+  padding: 10px 20px;
+  border: 1px solid #444;
+  border-left: none;
+  background-color: #007acc;
+  color: white;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
+  font-size: 1em;
+  transition: background-color 0.3s;
+}
+
+.pokemon-main-search-btn:hover {
+  background-color: #005f99;
+}
+
+.pokemon-main-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.pokemon-stats-card {
+  background-color: #252526;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.pokemon-stats-title,
+.pokemon-move-title {
+  color: #ccc;
+  margin-top: 0;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 10px;
+}
+
+.pokemon-stats-list,
+.pokemon-move-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pokemon-stats-list li,
+.pokemon-move-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #333;
+}
+
+.pokemon-stats-list li:last-child,
+.pokemon-move-list li:last-child {
+  border-bottom: none;
+}
+
+.pokemon-stats-list span,
+.pokemon-move-list span {
+  color: #00aaff;
+  font-weight: bold;
+}
+
+.pokemon-stats-card--image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(145deg, #2a2a2e, #212125);
+}
+
+.pokemon-main-img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.pokemon-stats-card-footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: #ccc;
+  font-size: 0.9em;
+}
+
+.pokemon-stats-card-footer span {
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Calculator Styles */
+.pokemon-stats-card[data-controller="calculator"] {
+  padding: 25px 35px;
+}
+
+.calculator-field {
+  margin-bottom: 20px;
+}
+
+.calculator-field label {
+  display: block;
+  margin-bottom: 10px;
+  color: #ccc;
+}
+
+.calculator-input {
+  width: calc(100% - 24px);
+  padding: 12px;
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 5px;
+  color: #f0f0f0;
+  font-size: 1em;
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.calculator-input::-webkit-inner-spin-button,
+.calculator-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.calculator-slider {
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 8px;
+  background: #444;
+  outline: none;
+  border-radius: 5px;
+}
+
+.calculator-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #007acc;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.calculator-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #007acc;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.calculator-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #007acc;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.calculator-btn:hover {
+  background-color: #005f99;
+}
+
+.calculator-result {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.calculated-cp-value {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #4caf50;
+  margin-bottom: 15px;
+}
+
+.calculator-result-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.calculator-result-item {
+  background-color: #333;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.calculator-result-item div:first-child {
+  font-size: 0.9em;
+  color: #ccc;
+  margin-bottom: 5px;
+}
+
+.calculator-result-item .value {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #fff;
+}

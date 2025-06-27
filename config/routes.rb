@@ -11,4 +11,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  resources :pokemons, only: [ :index ] do
+    post :calculate_cp, on: :collection
+  end
+
+  root to: "pokemons#index"
 end
